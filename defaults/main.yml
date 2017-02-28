@@ -1,0 +1,10 @@
+---
+
+leanlabs_kanban_server_hostname: "http://localhost"
+leanlabs_kanban_port: 9020
+leanlabs_kanban_signup: "true"
+#Use Settings / Application page for get these (if you want):
+# leanlabs_kanban_gitlab_client: ""
+# leanlabs_kanban_gitlab_secret: ""
+leanlabs_kanban_security_secret: "qwerty" # change if you want for more security
+leanlabs_kanban_listen_ip: "" # optional
