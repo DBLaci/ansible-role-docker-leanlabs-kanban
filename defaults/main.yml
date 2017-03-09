@@ -1,5 +1,6 @@
 ---
 
+leanlabs_kanban_image_tag: "latest"
 leanlabs_kanban_server_hostname: "http://localhost"
 leanlabs_kanban_port: 9020
 leanlabs_kanban_signup: "true"

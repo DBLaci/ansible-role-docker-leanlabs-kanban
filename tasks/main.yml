@@ -7,7 +7,7 @@
 
 - name: 'Start the Leanlabs Kanban docker container'
   docker_container:
-    image: "leanlabs/kanban:latest"
+    image: "leanlabs/kanban:{{ leanlabs_kanban_image_tag }}"
     name: "kanban"
     state: 'started'
     restart_policy: 'always'
@@ -20,13 +20,7 @@
       KANBAN_GITLAB_SECRET: "{{ leanlabs_kanban_gitlab_secret | default(omit) }}"
     links:
       "kanban_redis:kanban_redis"
-    # log_driver: json-file
-    log_driver: 'syslog'
-    log_options:
-      tag: "leanlabs-kanban"
-    # volumes:
-    #   - "{{ kanboard_dir_data }}:/var/www/app/data"
-    #   - "{{ kanboard_dir_plugins }}:/var/www/app/plugins"
+    log_driver: json-file
     ports:
 #      - "127.0.0.1:8000:80"
       - "{% if leanlabs_kanban_listen_ip != '' %}{{ leanlabs_kanban_listen_ip + ':' }}{% endif %}{{ leanlabs_kanban_port }}:80"
