@@ -4,6 +4,7 @@
   docker_container:
     image: "leanlabs/redis:1.0.0"
     name: "kanban_redis"
+    restart_policy: 'always'
 
 - name: 'Start the Leanlabs Kanban docker container'
   docker_container:
